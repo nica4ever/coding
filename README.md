@@ -1,2 +1,2 @@
 # .coding
-Personal homelab coding projects
+Personal home-lab coding projects
