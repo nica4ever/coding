@@ -1,0 +1,8 @@
+#!/bin/bash
+# By using the tree command with the following arguments we can determine the location of the dotfiles dir
+# By using the command tree with the following arguments we can list the file structure in the dotfiles directory and by piping it into the "grep -c" command with the "dotfiles/" argument onlythe files inside the directory are counted without the parent one(see tree command without grep)
+var1=$(tree -i -fd "${HOME}" | grep "dotfiles")
+var2=$(tree -i -a -L 1 --noreport "${var1}" | grep -c "dotfiles/") 
+echo "==== dotfiles repo check ==== $1"
+echo "Location of dotfiles dir: ${var1}"
+echo "Number of files for user ${USER}: ${var2}"
