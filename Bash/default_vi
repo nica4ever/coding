@@ -1,0 +1,4 @@
+#!/bin/bash
+name=""
+echo "Hello, ${name:-User}"
+echo "${name}"
