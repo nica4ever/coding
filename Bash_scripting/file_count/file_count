@@ -1,0 +1,18 @@
+#!/bin/bash
+
+DIR=""
+LS=""
+FC=""
+# Find the "coding" directory in the system
+DIR=$(find "$HOME" -maxdepth 3 -type d -name "Bash_scripting" -print -quit)
+
+if [[ "${DIR}" != "" ]]; then
+    LS=$(ls "${DIR}")
+else 
+    echo "Error could not locate coding directory"
+fi
+
+FC=$(echo "${LS}" | wc -l)
+
+#echo "Files in coding dir"
+echo "${FC}"
