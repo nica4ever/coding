@@ -1,0 +1,17 @@
+#!/bin/bash
+fruit=""
+case $1 in
+    apple)
+        fruit="red" && echo "${fruit}"
+        ;;
+    banana)
+        fruit="yellow" && echo "${fruit}"
+        ;;
+    kiwi)
+        fruit="green" && echo "${fruit}"
+        ;;
+    *)
+        echo "Fruit not on the list"
+        exit 1
+        ;;
+esac
