@@ -1,0 +1,43 @@
+#!/bin/bash
+X=""
+Y=""
+Z=""
+X=$(ls -A "${HOME}/.config/")
+
+# Window manager and terminal directories that can be found in ~/.config/
+wms="sway i3 hypr bspwm openbox qtile river niri wayfire xfce4 lxsession lxqt"
+terms="alacritty kitty foot wezterm ghostty terminator tilix xfce4-terminal sakura hyper rio"
+
+for wm in ${wms}; do
+    [[ -d "${HOME}/.config/${wm}" ]] && Y="${wm}" && break
+done
+
+for term in ${terms}; do
+    [[ -d "${HOME}/.config/${term}" ]] && Z="${term}"
+done
+
+case $1 in
+    --all)
+        echo "files in config directory:"
+        echo "${X}"
+        echo "desktop: ${Y}"
+        echo "terminal: ${Z}"
+        ;;
+    "")
+        echo "desktop: ${Y}"
+        echo "terminal: ${Z}"
+        ;;
+    --help)
+        echo "use '--all' or '--help' or leave empty"
+        ;;
+    *)
+        echo "try --help"
+        exit 1
+        ;;
+esac
+
+
+
+
+
+
