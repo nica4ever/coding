@@ -1,4 +1,8 @@
 #!/bin/bash
+if [[ $# -ne 1]]; then
+    echo "Usage: ./dotfiles_info ""/--all"
+fi
+
 X=""
 Y=""
 Z=""
@@ -28,10 +32,10 @@ case $1 in
         echo "terminal: ${Z}"
         ;;
     --help)
-        echo "use '--all' or '--help' or leave empty"
+        echo "Usage: ./dotfiles_info --all/--help/(empty)"
         ;;
     *)
-        echo "try --help"
+        echo "Error unknown argument, try --help"
         exit 1
         ;;
 esac
