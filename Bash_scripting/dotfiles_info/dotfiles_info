@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ $# -ne 1]]; then
-    echo "Usage: ./dotfiles_info ""/--all"
+    echo "Usage: ./dotfiles_info --info/--all/help"
 fi
 
 X=""
@@ -27,7 +27,7 @@ case $1 in
         echo "desktop: ${Y}"
         echo "terminal: ${Z}"
         ;;
-    "")
+    --info)
         echo "desktop: ${Y}"
         echo "terminal: ${Z}"
         ;;
