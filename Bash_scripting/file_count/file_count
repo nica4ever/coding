@@ -1,18 +1,28 @@
 #!/bin/bash
 
-DIR=""
-LS=""
-FC=""
-# Find the "coding" directory in the system
-DIR=$(find "$HOME" -maxdepth 3 -type d -name "Bash_scripting" -print -quit)
+DIR=$(find "${HOME}/.config")
+echo "------------------------------------"
+echo "Dirctories in ${HOME}/.config/:"
+echo "------------------------------------"
 
-if [[ "${DIR}" != "" ]]; then
-    LS=$(ls "${DIR}")
-else 
-    echo "Error could not locate coding directory"
-fi
+for dir in $DIR; do
+    [[ -f "$dir" ]] && continue
+    for catg in "${dir[@]}"; do
+    echo "${catg#"${HOME}/.config"}"
+ done | sort
+done
 
-FC=$(echo "${LS}" | wc -l)
+echo ""
+echo "--------------------------"
+echo "Files in each direcotry:"
+echo "--------------------------"
+echo ""
 
-#echo "Files in coding dir"
-echo "${FC}"
+for file in $DIR; do
+    [[ -d "$file" ]] && continue
+    for catg in "${file[@]}"; do
+    echo "${catg#"${HOME}/.config"}"
+ done | sort
+done
+
+
