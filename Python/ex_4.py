@@ -20,6 +20,6 @@ def count_by_status(dic, status):
 print(f'new-dawn-3: {check_server("new-dawn-3", servers_status)}')
 print(f'new-dawn-XD: {check_server("new-dawn-XD", servers_status)}')
 
-print(count_by_status(servers_status, "online"))
-print(count_by_status(servers_status, "offline"))
-print(count_by_status(servers_status, "degraded"))
+print(f'Servers online: {count_by_status(servers_status, "online")}')
+print(f'Servers offline: {count_by_status(servers_status, "offline")}')
+print(f'Servers degraded: {count_by_status(servers_status, "degraded")}')
