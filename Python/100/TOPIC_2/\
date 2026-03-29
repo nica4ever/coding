@@ -1,0 +1,5 @@
+# 2.17 Create a list of 8 random numbers (hardcoded is fine).
+#      Find and print the maximum WITHOUT using max(). Use a loop.
+import random
+a = random.randint(1, 100)
+a = random.randint(1, 100)
