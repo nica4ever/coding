@@ -16,4 +16,6 @@ print("")
 
 print("Servers with highest value")
 sort = sorted(dic.items(), key=lambda x: x[1], reverse=True)
-print(f'{sort[0:3]}')
+for i in sort[0:3]:
+    print("")
+    print(f'{i[0]}: {i[1]}%')
