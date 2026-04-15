@@ -1,0 +1,25 @@
+#!/bin/bash
+# 14. Create `access.log` with these fields: IP METHOD PATH STATUS
+#     10.0.0.1 GET /index.html 200
+#     10.0.0.2 POST /api/login 401
+#     10.0.0.1 GET /style.css 200
+#     10.0.0.3 GET /admin 403
+#     10.0.0.1 GET /missing 404
+#     10.0.0.4 POST /api/pay 500
+#     10.0.0.2 POST /api/login 401
+#     10.0.0.1 GET /home 200
+#     10.0.0.5 GET /old 301
+#     10.0.0.1 GET /broken 500
+
+cat > acess.log << 'EOF'
+10.0.0.1 GET /index.html 200
+10.0.0.2 POST /api/login 401
+10.0.0.1 GET /style.css 200
+10.0.0.3 GET /admin 403
+10.0.0.1 GET /missing 404
+10.0.0.4 POST /api/pay 500
+10.0.0.2 POST /api/login 401
+10.0.0.1 GET /home 200
+10.0.0.5 GET /old 301
+10.0.0.1 GET /broken 500
+EOF
